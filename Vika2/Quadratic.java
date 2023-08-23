@@ -24,7 +24,10 @@ public class Quadratic {
         double c = inntak.nextDouble();
         // calculate roots
         double discriminant = b * b - 4.0 * c;
+<<<<<<< HEAD
 
+=======
+>>>>>>> a904641248c1d600c0e732a649844b626a3538f8
         // double sqrt (double )  þetta er skilgreiningin:q!
         double d = Math.sqrt(discriminant);
         double root1 = (-b + d) / 2.0;
