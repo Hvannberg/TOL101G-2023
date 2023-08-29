@@ -1,4 +1,5 @@
 import java.nio.charset.StandardCharsets;
+import java.util.Locale;
 import java.util.Scanner;
 
 /******************************************************************************
@@ -10,24 +11,20 @@ import java.util.Scanner;
  *
  *  Dæmi um notkun
  *  %java Quadratic
- *  -10 -8             <-- inntak
- *  10.744562646538029 <-- úttak
+ *  -10.0 -8.0             <-- inntak
+ *  10.744562646538029 <-- úttak byrjar
  * -0.7445626465380286
  *****************************************************************************/
 
 public class Quadratic {
     public static void main(String[] args) {
         Scanner inntak = new Scanner(System.in, StandardCharsets.UTF_8);
-
-        // parse coefficients from command-line
+        inntak.useLocale(Locale.US);
+        // parse coefficients from the console
         double b = inntak.nextDouble();
         double c = inntak.nextDouble();
         // calculate roots
         double discriminant = b * b - 4.0 * c;
-<<<<<<< HEAD
-
-=======
->>>>>>> a904641248c1d600c0e732a649844b626a3538f8
         // double sqrt (double )  þetta er skilgreiningin:q!
         double d = Math.sqrt(discriminant);
         double root1 = (-b + d) / 2.0;
