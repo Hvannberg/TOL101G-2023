@@ -16,12 +16,12 @@ import java.util.Scanner;
 
 public class FlatarmalHrings {
     public static void main(String[] args) {
-        final double PI_TALA=3.14159; // fasti fyrir PI
+        final double PI_TALA = 3.14159; // fasti fyrir PI
         // Skilgreiningar á breytum
         double radius;  // Skilgreinum radíus hrings
         double flatarmal;  // Skilgreinum flatarmál
         // Lesa inn radíus hrings af console
-        Scanner inntak = new Scanner (System.in, StandardCharsets.UTF_8);
+        Scanner inntak = new Scanner(System.in, StandardCharsets.UTF_8);
         inntak.useLocale(Locale.US);
         radius = inntak.nextDouble();
         // Reikna flatarmál hrings
