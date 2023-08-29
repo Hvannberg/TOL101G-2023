@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckStyle-IDEA" serialisationVersion="2">
+    <checkstyleVersion>8.31</checkstyleVersion>
+    <scanScope>JavaOnly</scanScope>
+    <option name="thirdPartyClasspath">
+      <option value="C:\Users\ebba\OneDrive - Háskóli Íslands\Tölvunarfræði 1 2022\MinForrit\.lift\checkstyle-lift.jar" />
+    </option>
+    <option name="activeLocationIds" />
+    <option name="locations">
+      <list>
+        <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="95948541-d93a-4509-8e0d-572f92f33112" type="LOCAL_FILE" scope="All" description="COS 126 Checks">
+          $PROJECT_DIR$/../../Tölvunarfræði 1 2021/hello nota þessa uppsetningu/.lift/checkstyle-cos126.xml
+          <option name="properties">
+            <map>
+              <entry key="basedir" value="$PROJECT_DIR$" />
+              <entry key="suppressions" value="checkstyle-suppressions.xml" />
+            </map>
+          </option>
+        </ConfigurationLocation>
+      </list>
+    </option>
+  </component>
+</project>

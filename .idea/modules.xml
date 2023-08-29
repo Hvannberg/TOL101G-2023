@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Vika1/Vika1.iml" filepath="$PROJECT_DIR$/Vika1/Vika1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika10/Vika10.iml" filepath="$PROJECT_DIR$/Vika10/Vika10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika11/Vika11.iml" filepath="$PROJECT_DIR$/Vika11/Vika11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika12/Vika12.iml" filepath="$PROJECT_DIR$/Vika12/Vika12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika13/Vika13.iml" filepath="$PROJECT_DIR$/Vika13/Vika13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika14/Vika14.iml" filepath="$PROJECT_DIR$/Vika14/Vika14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika2/Vika2.iml" filepath="$PROJECT_DIR$/Vika2/Vika2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika3/Vika3.iml" filepath="$PROJECT_DIR$/Vika3/Vika3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika4/Vika4.iml" filepath="$PROJECT_DIR$/Vika4/Vika4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika5/Vika5.iml" filepath="$PROJECT_DIR$/Vika5/Vika5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika6/Vika6.iml" filepath="$PROJECT_DIR$/Vika6/Vika6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika7/Vika7.iml" filepath="$PROJECT_DIR$/Vika7/Vika7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika8/Vika8.iml" filepath="$PROJECT_DIR$/Vika8/Vika8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vika9/Vika9.iml" filepath="$PROJECT_DIR$/Vika9/Vika9.iml" />
+    </modules>
+  </component>
+</project>
