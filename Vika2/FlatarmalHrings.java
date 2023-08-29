@@ -10,7 +10,7 @@ import java.util.Scanner;
  *  Notkun:
  *  %java FlatarmalHrings
  *  20  <-- inntak
- *  Flatarmál hrings fyrir radíus 20.0 er 1256.636 <--
+ *  Flatarmál hrings fyrir radíus 20.0 er 1256.636 <-- uttak:::
  *
  *****************************************************************************/
 
