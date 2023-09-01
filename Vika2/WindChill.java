@@ -8,7 +8,7 @@ import java.util.Scanner;
  *  Lýsing  : Tekur inn tvær kommutölur af console, hitastig og vindhraða, t og v.
  *  Reiknar út vindkælingu miðað við hita í celsíusgráðum og vindhraða
  *  í km/kls. Inntak er t og v. Prentar út hitastig vindhraða og vindkælingu.
- *  Formúlan er 35.74 + 0.6215t - 11.37v~0.16 + 0.3965tv~0.16
+ *  Formúlan er 13.12 + 0.6215t - 11.37v~0.16 + 0.3965tv~0.16
  *
  *  Notkun:
  *  %java WindChill
@@ -26,7 +26,7 @@ public class WindChill {
         double temperature = inntak.nextDouble();
         double windSpeed = inntak.nextDouble();
 
-        double windChill = 13.124 + 0.6215 * temperature +
+        double windChill = 13.12 + 0.6215 * temperature +
                 (0.3965 * temperature - 11.37) * Math.pow(windSpeed, 0.16);
 
         System.out.println("Temperature = " + temperature + " C");
