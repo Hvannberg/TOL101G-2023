@@ -5,10 +5,18 @@ import java.util.Scanner;
  *  Nafn    : Ebba Þóra Hvannberg
  *  T-póstur: ebba@hi.is
  *
- *  Lýsing  : Finnur hver fjöldi daga í mánuði er. Mánuður og ár eru fengin úr
- *  viðfangsbreytum. Fjöldi daga er skrifaður út. Ef ólöglegur mánuður er í
+ *  Lýsing  : Finnur hver fjöldi daga í mánuði er. Mánuður og ár eru fengin
+ *  úr staðalinntaki. Fjöldi daga er skrifaður út. Ef ólöglegur mánuður er í
  *  viðfangsbreytunni er skrifuð út villumelding og fjöldi daga er 0.
+ *  Notkun:
  *
+ *  %java DaysInMonth
+ *  2 2000
+ *  29
+ *
+ *  %java DaysInMonth
+ *  9 2023
+ *  30
  *****************************************************************************/
 
 public class DaysInMonth {
@@ -35,8 +43,10 @@ public class DaysInMonth {
                 numDays = 30;
                 break;
             case 2:
-                if (((year % 4 == 0) && (year % 100 != 0))
-                        || (year % 400 == 0))
+                // Ef ár er deilanlegt með 4 og ár er ekki  aldamótaár (deilanlegt með 100) eða
+                // ár er deilanlegt með 400 þá er hlaupaár
+                if (year % 4 == 0 && year % 100 != 0 // skoðið forgangsröðin á virkjunum
+                        || year % 400 == 0)          // reiknivirkjar fyrst, samanburðurðarvirkjar, tengivirkjar
                     numDays = 29;
                 else
                     numDays = 28;
