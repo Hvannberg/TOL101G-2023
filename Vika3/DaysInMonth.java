@@ -46,7 +46,7 @@ public class DaysInMonth {
                 // Ef ár er deilanlegt með 4 og ár er ekki  aldamótaár (deilanlegt með 100) eða
                 // ár er deilanlegt með 400 þá er hlaupaár
                 if (year % 4 == 0 && year % 100 != 0 // skoðið forgangsröðin á virkjunum
-                        || year % 400 == 0)          // reiknivirkjar fyrst, samanburðurðarvirkjar, tengivirkjar
+                        || year % 400 == 0)          // reiknivirkjar fyrst, samanburðurðarvirkjar, rökvirkjar
                     numDays = 29;
                 else
                     numDays = 28;
