@@ -15,7 +15,7 @@ public class PowersOfTwoWhile {
     public static void main(String[] args) {
 
         Scanner inntak = new Scanner (System.in, StandardCharsets.UTF_8);
-        // Lesa inn hæsta veldi af skipanalínu
+        // Lesa inn hæsta veldi af staðalinntaki
         int n = inntak.nextInt();
 
         int i = 0;                // teljari frá 0 til n
