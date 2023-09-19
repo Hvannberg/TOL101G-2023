@@ -1,8 +1,11 @@
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
+
 /******************************************************************************
  *  Nafn    : Ebba Þóra Hvannberg
  *  T-póstur: ebba@hi.is
  *
- *  Lýsing  :  Les in n af skipanalínu Reiknar út töflu með veldi af tveimur upp
+ *  Lýsing  :  Les in n af staðalinntaki og reiknar út töflu með veldi af tveimur upp
  *  í n. n verður að vera minni en 31 því annars flæðir heiltalan yfir.
  *
  *
@@ -11,8 +14,9 @@
 public class PowersOfTwoWhile {
     public static void main(String[] args) {
 
+        Scanner inntak = new Scanner (System.in, StandardCharsets.UTF_8);
         // Lesa inn hæsta veldi af skipanalínu
-        int n = Integer.parseInt(args[0]);
+        int n = inntak.nextInt();
 
         int i = 0;                // teljari frá 0 til n
         int powerOfTwo = 1;       // i-ta veldið af tveimur
