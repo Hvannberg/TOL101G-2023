@@ -1,6 +1,6 @@
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-import java.util.Random;
+
 /******************************************************************************
  *  Nafn    : Ebba Þóra Hvannberg
  *  T-póstur: ebba@hi.is
@@ -13,40 +13,51 @@ import java.util.Random;
  *
  *  Notkun
  *  %java Gambler
- *  20 100 10000 <-- inntak
- *  996 wins of 10000 <-- úttak
- * Percent of games won = 9.96
- * Avg # bets           = 911.0956
+ *  Hvað viltu leggja undir? 20
+ *  Hvað viltu eiga í lokin? 100
+ *  Hvað á að gera margar hermanir (tilraunir)? 1000
+ * 208 vinningar í 1000 hermunum
+ * Hlutfall unninna leikja = 20.8
+ * Meðalfjöldi  veðmála         = 1511.856
  *****************************************************************************/
 
 public class Gambler {
     public static void main(String[] args) {
-        Scanner inntak = new Scanner (System.in, StandardCharsets.UTF_8);
+        Scanner inntak = new Scanner(System.in, StandardCharsets.UTF_8);
 
-        int stake = inntak.nextInt();    // gambler's stating bankroll
-        int goal = inntak.nextInt();    // gambler's desired bankroll
-        int trials = inntak.nextInt();   // number of trials to perform
+        System.out.print("Hvað viltu leggja undir? ");
+        int adVedi = inntak.nextInt();    // hvað leggur hann undir
+        System.out.print("Hvað viltu eiga í lokin? ");
+        int takmark = inntak.nextInt();    // hvert er takmarkið
+        System.out.print("Hvað á að gera margar hermanir (tilraunir)? ");
+        int hermanir = inntak.nextInt();   // fjöldi hermana
 
-        int bets = 0;        // total number of bets made
-        int wins = 0;        // total number of games won
+        int vedmal = 0;        // fjöldi veðmála alls
+        int vinningar = 0;        // fjöldi veðmála alls sem fjárhættuspilari vann
 
-        Random random = new Random();
-        // repeat trials times
-        for (int t = 0; t < trials; t++) {
+        // endurtökum  hermanir
+        for (int t = 0; t < hermanir; t++) {
 
-            // do one gambler's ruin simulation
-            int cash = stake;
-            while (cash > 0 && cash < goal) {
-                bets++;
-                if (random.nextInt(10) < 5) cash++;     // win $1
-                else cash--;     // lose $1
+            // ein hermun fjárhættuspilarans
+            int peningur = adVedi;
+            while (peningur > 0 && peningur < takmark) {
+                vedmal++;
+                if (Math.random() * 10 < 5) {
+                    peningur++;     // vinnur eina kr
+                }
+                else {
+                    peningur--;     // tapar 1 kr
+                }
             }
-            if (cash == goal) wins++;                // did gambler go achieve desired goal?
+            // Endar eina hermun
+            if (peningur == takmark) {
+                vinningar++;                // Náði fjárhættuspilarinn takmarki sínu?
+            }
         }
 
         // print results
-        System.out.println(wins + " wins of " + trials);
-        System.out.println("Percent of games won = " + 100.0 * wins / trials);
-        System.out.println("Avg # bets           = " + 1.0 * bets / trials);
+        System.out.println(vinningar + " vinningar í " + hermanir + " hermunum");
+        System.out.println("Hlutfall unninna leikja = " + 100.0 * vinningar / hermanir);
+        System.out.println("Meðalfjöldi  veðmála         = " + 1.0 * vedmal / hermanir);
     }
 }
