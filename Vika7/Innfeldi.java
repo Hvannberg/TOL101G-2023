@@ -16,5 +16,6 @@ public class Innfeldi {
         for (int i = 0; i < N; i++) {
             sum = sum + x[i] * y[i];
         }
+        System.out.println(sum);
     }
 }
