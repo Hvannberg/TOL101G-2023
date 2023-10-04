@@ -19,9 +19,11 @@
  *  12782673
  *
  ******************************************************************************/
-
+import java.security.SecureRandom;
 public class CouponCollector {
+    private static SecureRandom random = new SecureRandom();
     public static void main(String[] args) {
+
         int n = Integer.parseInt(args[0]);       // number of card types
         boolean[] isCollected
                 = new boolean[n];  // isCollected[i] = true if card i has been collected
@@ -30,7 +32,7 @@ public class CouponCollector {
 
         // repeatedly choose a random card and check whether it's a new one
         while (distinct < n) {
-            int value = StdRandom.uniform(0, n);   // random card between 0 and n-1
+            int value = random.nextInt(n);   // random card between 0 and n-1
             count++;                                 // we collected one more card
             if (!isCollected[value]) {
                 distinct++;
