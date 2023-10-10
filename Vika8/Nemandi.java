@@ -25,7 +25,6 @@ public class Nemandi {
     }
 
     // gettera og settera þarf ekki að skjala
-
     public String gettPostur() {
         return tPostur;
     }
@@ -82,5 +81,6 @@ public class Nemandi {
         Nemandi n = new Nemandi("Bjarney", "b2@hi.is");
         System.out.println(n);
         System.out.println(n.getNafn());
+
     }
 }

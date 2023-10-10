@@ -5,7 +5,7 @@ import java.util.Scanner;
  *  Nafn    : Ebba Þóra Hvannberg
  *  T-póstur: ebba@hi.is
  *
- *  Lýsing  : Lausn á dæmi sett fyrir í æfingu 10.2
+ *  Lýsing  :
  *
  *
  *****************************************************************************/
