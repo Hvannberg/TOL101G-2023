@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.Point;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
+import java.util.Scanner;
 
 /******************************************************************************
  *  Nafn    : Ebba Þóra Hvannberg
@@ -103,12 +105,17 @@ public class CircleLitur {
      * @param args fjöldi og radíus hringjanna
      */
     public static void main(String[] args) {
+        Scanner inntak = new Scanner (System.in, StandardCharsets.UTF_8);
+
         final int FJOLDI = Integer.parseInt(args[0]);
         final int RADIUS = Integer.parseInt(args[1]);
         final int N = 500;
         final int MAX = 256;
         StdDraw.setCanvasSize(N, N); // Teikniflöturinn er N x N
         StdDraw.setScale(0, N); // Skalinn er frá 0 til N í báðum víddum
+
+        // geyma hringina í fylki
+        CircleLitur [] margirHringir = new CircleLitur [FJOLDI];
         for (int i = 0; i < FJOLDI; i++) {
 
             // Búinn er til CircleLitur hlutur með radíus RADIUS, slembilit og slembimiðju
@@ -118,8 +125,24 @@ public class CircleLitur {
                                                                    random.nextInt(MAX)),
                                                  new Point(random.nextInt(N),
                                                            random.nextInt(N)));
-
+            // Setja hring í fylki
+            margirHringir[i] = circle;
             circle.draw();
+        }
+        //
+        System.out.print ("Viltu hreinsa teikninguna? ");
+        String svar = inntak.next();
+        if (svar.equals ("já")) {
+            StdDraw.clear();
+        }
+
+        // Birta sömu teikningu aftur
+        System.out.print ("Viltu birta teikninguna? ");
+        svar = inntak.next();
+        if (svar.equals ("já")) {
+            for (int i=0; i<FJOLDI; i++) {
+                margirHringir[i].draw();
+            }
         }
 
     }
