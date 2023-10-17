@@ -13,13 +13,11 @@ import java.util.Arrays;
 public class Nemendaskra {
     private String nafnSkola;
     private int fjoldiNemenda = 0;
-    private int hamarksFjoldi;
     private Nemandi[] nemendur;
 
     public Nemendaskra(String nafnSkola, int fjoldi) {
         this.nafnSkola = nafnSkola;
-        hamarksFjoldi = fjoldi;
-        nemendur = new Nemandi[hamarksFjoldi];
+        nemendur = new Nemandi[fjoldi];
     }
 
     /**
@@ -35,7 +33,7 @@ public class Nemendaskra {
      * eftirskilyrði: ef nemandinn er á skrá þá er einum færri nemendur og nemandinn
      * er ekki lengur á skrá
      *
-     * @param nemandi
+     * @param nemandi nemandinn sem á að úrskrá
      * @return true ef nemandinn var skráður úr skólanum annars false
      */
     public boolean urskraNemanda(Nemandi nemandi) {
@@ -52,7 +50,7 @@ public class Nemendaskra {
      * @return Skilar true ef það er laust pláss í skólanum annars false
      */
     public boolean erLaustPlass() {
-        return fjoldiNemenda < hamarksFjoldi;
+        return fjoldiNemenda < nemendur.length;
     }
 
     /**
@@ -61,7 +59,7 @@ public class Nemendaskra {
      * @param saeti sæti staksins sem á að eyða
      */
     private void eyda(int saeti) {
-        for (int i = saeti; i < hamarksFjoldi - 1; i++) {
+        for (int i = saeti; i < fjoldiNemenda - 1; i++) {
             nemendur[i] = nemendur[i + 1];
         }
         fjoldiNemenda--;
@@ -69,11 +67,18 @@ public class Nemendaskra {
 
     }
 
+    public String nemendalisti() {
+        String listi="";
+        for (int i=0;i<fjoldiNemenda;i++ ) {
+            listi += nemendur[i]+ "\n";
+        }
+        return listi;
+    }
     public String toString() {
         return "Nemendaskra{" +
                 "nafnSkola='" + nafnSkola + '\'' +
                 ", fjoldiNemenda=" + fjoldiNemenda +
-                ", hamarksFjoldi=" + hamarksFjoldi + "\n" +
+                ", hamarksfjoldi=" + nemendur.length + "\n" +
                 ", nemendur=" + Arrays.toString(nemendur) +
                 '}';
     }
