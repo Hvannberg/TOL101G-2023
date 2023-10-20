@@ -5,14 +5,14 @@ import java.util.Arrays;
  *  T-póstur: ebba@hi.is
  *
  *  Lýsing  :Nemendaskrá skóla sem hefur nafn skóla, fjölda nemenda hverju sinni,
- *  hámarksfjölda nemenda og nemendalista
+ *  nemendalista
  *
  *
  *****************************************************************************/
 
 public class Nemendaskra {
     private String nafnSkola;
-    private int fjoldiNemenda = 0;
+    private int fjoldiNemenda = 0; // næsta lausa pláss
     private Nemandi[] nemendur;
 
     public Nemendaskra(String nafnSkola, int fjoldi) {
@@ -74,6 +74,7 @@ public class Nemendaskra {
         }
         return listi;
     }
+
     public String toString() {
         return "Nemendaskra{" +
                 "nafnSkola='" + nafnSkola + '\'' +
