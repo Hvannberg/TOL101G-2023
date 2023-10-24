@@ -9,14 +9,15 @@ import java.awt.Color;
  *
  *****************************************************************************/
 
-public class Rectangle extends GeometricObject{
+public class Rectangle extends GeometricObject {
 
     private double width;   // breidd
     private double height;  // hæð
 
     /**
      * Smíðar rétthyrning
-     * @param width breidd
+     *
+     * @param width  breidd
      * @param height hæð
      */
     public Rectangle(int width, int height) {
@@ -26,17 +27,18 @@ public class Rectangle extends GeometricObject{
 
     /**
      * Smíðar rétthyrning með lit, filled, breidd og hæð
-     * @param color liturinn
-     * @param filled á að teikna rétthyrninginn fylltan
-     * @param width breidd
+     *
+     * @param width  breidd
      * @param height hæð
+     * @param color  liturinn
+     * @param filled á að teikna rétthyrninginn fylltan
      */
-    public Rectangle(Color color, boolean filled, double width, double height) {
+    public Rectangle(double width, double height, Color color, boolean filled) {
         // má einnig nota super(color, filled);
         // super (color, filled);
         this.width = width;
         this.height = height;
-        setColor (color);
+        setColor(color);
         setFilled(filled);
     }
 
@@ -59,26 +61,33 @@ public class Rectangle extends GeometricObject{
 
     /**
      * Reiknar og skilar flatarmálinu.
+     *
      * @return flatarmálið
      */
-    public double getArea () {
-        return width*height;
+    public double getArea() {
+        return width * height;
     }
 
     /**
      * Reiknar og skilar ummálinu.
+     *
      * @return ummálið
      */
-    public double getPerimeter () {
-        return 2*(width + height);
+    public double getPerimeter() {
+        return 2 * (width + height);
+    }
+
+    public String toString() {
+        return super.toString() + "\nweight is " + width + " and height is " + height;
     }
 
     /**
      * Prófunaraktygi.
+     *
      * @param args ónotað
      */
     public static void main(String[] args) {
-        Rectangle testRectangle = new Rectangle (3, 4);
-        System.out.println (testRectangle);
+        Rectangle testRectangle = new Rectangle(3, 4);
+        System.out.println(testRectangle);
     }
 }

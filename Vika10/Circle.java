@@ -27,11 +27,12 @@ public class Circle extends GeometricObject {
 
     /**
      * Smíðar hring með lit, filled og radíus
-     * @param color litur
-     * @param filled fylltur
+     *
      * @param radius radíus
+     * @param color  litur
+     * @param filled fylltur
      */
-    public Circle(Color color, boolean filled, double radius) {
+    public Circle(double radius, Color color, boolean filled) {
       // super(color, filled);
         setColor (color);
         setFilled(filled);
@@ -80,7 +81,7 @@ public class Circle extends GeometricObject {
      * @param args ónotað
      */
     public static void main(String[] args) {
-        Circle testCircle = new Circle (Color.RED, true, 3);
+        Circle testCircle = new Circle (3, Color.RED, true);
         System.out.println (testCircle);
     }
 }
