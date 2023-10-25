@@ -78,7 +78,7 @@ public class Rectangle extends GeometricObject {
     }
 
     public String toString() {
-        return super.toString() + "\nweight is " + width + " and height is " + height;
+        return super.toString() + "\nwidth is " + width + " and height is " + height;
     }
 
     /**
