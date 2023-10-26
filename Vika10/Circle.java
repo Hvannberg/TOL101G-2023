@@ -1,5 +1,5 @@
 import java.awt.Color;
-
+import java.awt.Point;
 /******************************************************************************
  *  Nafn    : Liang
  *  Introduction to Java Programming and Data Structures, Comprehensive Version
@@ -11,7 +11,7 @@ import java.awt.Color;
 
 public class Circle extends GeometricObject {
     private double radius;
-
+    private Point center;
     // smiðir
 
     public Circle () {
@@ -28,15 +28,31 @@ public class Circle extends GeometricObject {
     /**
      * Smíðar hring með lit, filled og radíus
      *
+     * @param p miðja
+     * @param radius radíus
+     * @param color  litur
+     * @param filled fylltur
+     */
+    public Circle(Point p, double radius, Color color, boolean filled) {
+      // super(color, filled);
+        setColor (color);
+        setFilled(filled);
+        this.radius = radius;
+        this.center = p;
+    }
+    /**
+     * Smíðar hring með lit, filled og radíus
+     *
      * @param radius radíus
      * @param color  litur
      * @param filled fylltur
      */
     public Circle(double radius, Color color, boolean filled) {
-      // super(color, filled);
+        // super(color, filled);
         setColor (color);
         setFilled(filled);
         this.radius = radius;
+        this.center = new Point(0,0);
     }
 
     // get- og set aðferðir
@@ -77,11 +93,24 @@ public class Circle extends GeometricObject {
     }
 
     /**
+     * Teiknar hringinn á canvas sem þegar er búið til
+     * Forskilyrði: Búið er að búa til canvas
+     */
+    public void draw() {
+        StdDraw.setPenColor(getColor());
+        if (isFilled()) {
+            StdDraw.filledCircle(center.x, center.y, radius);
+        } else {
+            StdDraw.circle (center.x, center.y, radius);
+        }
+    }
+
+    /**
      * Prófunaraktygi.
      * @param args ónotað
      */
     public static void main(String[] args) {
-        Circle testCircle = new Circle (3, Color.RED, true);
+        Circle testCircle = new Circle (new Point(200,200), 3, Color.RED, true);
         System.out.println (testCircle);
     }
 }

@@ -1,5 +1,5 @@
 import java.awt.Color;
-
+import java.awt.Point;
 /******************************************************************************
  *  Nafn    : Liang
  *  Introduction to Java Programming and Data Structures, Comprehensive Version
@@ -13,6 +13,7 @@ public class Rectangle extends GeometricObject {
 
     private double width;   // breidd
     private double height;  // hæð
+    private Point center;   // miðja
 
     /**
      * Smíðar rétthyrning
@@ -28,6 +29,22 @@ public class Rectangle extends GeometricObject {
     /**
      * Smíðar rétthyrning með lit, filled, breidd og hæð
      *
+     * @param p miðjan
+     * @param width  breidd
+     * @param height hæð
+     * @param color  liturinn
+     * @param filled á að teikna rétthyrninginn fylltan
+     */
+    public Rectangle(Point p, double width, double height, Color color, boolean filled) {
+        // köllum á smiðinn í þessum klasa með 4 parametrum
+        this(width, height, color, filled);
+        // að auki setjum við miðjuna
+        this.center = p;
+    }
+
+    /**
+     * Smíðar rétthyrning með lit, filled, breidd og hæð
+     *
      * @param width  breidd
      * @param height hæð
      * @param color  liturinn
@@ -38,9 +55,11 @@ public class Rectangle extends GeometricObject {
         // super (color, filled);
         this.width = width;
         this.height = height;
+        this.center = new Point(0,0);
         setColor(color);
         setFilled(filled);
     }
+
 
     // get og set aðferðir
     public double getWidth() {
@@ -79,6 +98,15 @@ public class Rectangle extends GeometricObject {
 
     public String toString() {
         return super.toString() + "\nwidth is " + width + " and height is " + height;
+    }
+
+    public void draw() {
+        if (isFilled()) {
+            StdDraw.filledRectangle (center.x, center.y, width/2, height/2);
+        } else {
+            StdDraw.rectangle (center.x, center.y, width/2, height/2);
+        }
+
     }
 
     /**

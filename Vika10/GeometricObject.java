@@ -9,7 +9,7 @@ import java.util.Date;
  *
  *****************************************************************************/
 
-public class GeometricObject {
+public abstract class GeometricObject { // Abstract merkir að við búum aldrei til hlut af þessum klasa
     private Color color;    // athugið að þetta er útfært öðruvísi í bókinni
     private boolean filled;
     private Date dateCreated;
@@ -62,9 +62,14 @@ public class GeometricObject {
 
     public String toString() {
         return "created on "+dateCreated+
-                " color:" + color +
-                " and filled:" + filled;
+                " color: " + color +
+                " and filled: " + filled;
     }
+
+    /**
+     * Teiknar rúmfræðihlutinn - útfært í undirklösum
+     */
+    public abstract void draw ();
 
     public static void main(String[] args) {
 
