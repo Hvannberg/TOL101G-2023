@@ -100,13 +100,17 @@ public class Rectangle extends GeometricObject {
         return super.toString() + "\nwidth is " + width + " and height is " + height;
     }
 
+    /**
+     * Teiknar rétthyrninginn á canvas sem þegar er búið til
+     * Forskilyrði: Búið er að búa til canvas
+     */
     public void draw() {
+        StdDraw.setPenColor (getColor());
         if (isFilled()) {
             StdDraw.filledRectangle (center.x, center.y, width/2, height/2);
         } else {
             StdDraw.rectangle (center.x, center.y, width/2, height/2);
         }
-
     }
 
     /**
