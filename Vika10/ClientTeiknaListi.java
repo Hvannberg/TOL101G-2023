@@ -33,11 +33,17 @@ public class ClientTeiknaListi {
         for (int i = 0; i < FJOLDI; i++) {
             // Búinn er til Circle eða Rectangle hlutur
             boolean circleOrRectangle = random.nextBoolean();
+            // ef ég fékk true þá
             if (circleOrRectangle) {
-                listi.add(new Circle(getPoint(random, N), 15, getColor(), random.nextBoolean()));
+                // bý ég til Circle hlut
+                // og bæti honum á listi
+                listi.add(new Circle(getRandomPoint(random, N), 15, getRandomColor(), random.nextBoolean()));
             }
+            // annars
             else {
-                listi.add(new Rectangle(getPoint(random, N), 30, 50, getColor(),
+                // bý ég til rétthyrning
+                // og bæti honum á listi
+                listi.add(new Rectangle(getRandomPoint(random, N), 30, 50, getRandomColor(),
                                         random.nextBoolean()));
             }
         }
@@ -49,7 +55,7 @@ public class ClientTeiknaListi {
      * Býr til slembilit
      * @return skilar litnum
      */
-    private static Color getColor() {
+    private static Color getRandomColor() {
         return new Color(random.nextInt(MAX),
                          random.nextInt(MAX),
                          random.nextInt(MAX));
@@ -61,7 +67,7 @@ public class ClientTeiknaListi {
      * @param N hámark x, y
      * @return punktinumm
      */
-    private static Point getPoint(Random random, int N) {
+    private static Point getRandomPoint(Random random, int N) {
         return new Point(random.nextInt(N),
                          random.nextInt(N));
     }
