@@ -63,7 +63,6 @@ public class SudokuREF {
             return false;
         }
 
-
         // athugum hvort bord [i][j] er lögleg í blokkinni
         if (erLoglegBlokk(i, j, bord)) return false;
         return true;
@@ -103,9 +102,15 @@ public class SudokuREF {
         return fylki;
     }
 
+    /**
+     * Athugar hvort sella fylki[j] sé lögleg í fylkinu
+     * @param j sætisvísir í fylki
+     * @param fylki einvítt fylki
+     * @return true ef fylki[j] er löglegt annars false
+     */
     private static boolean erLogleg(int j, int[] fylki) {
-        for (int dalkur = 0; dalkur < fylki.length; dalkur++) {
-            if (dalkur != j && fylki[dalkur] == fylki[j]) {
+        for (int i = 0; i < fylki.length; i++) {
+            if (i != j && fylki[i] == fylki[j]) {
                 return false;
             }
         }
